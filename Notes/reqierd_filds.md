@@ -10,7 +10,7 @@ how to make props is requierd ?
     }
  
  وفي ملف ال DbContext:
- ``` public class ApplicationDbContext : DbContext
+  public class ApplicationDbContext : DbContext
  {
      protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
 
@@ -22,5 +22,5 @@ how to make props is requierd ?
         new BlogEntityTypeConfiguration().Configure(modelBuilder.Entity<Blog>());
      }
      public DbSet<Blog> Blogs { get; set; }
- }```
+ }
 
