@@ -10,6 +10,7 @@ how to make props is requierd ?
     }
  
  وفي ملف ال DbContext:
+ ```csharp
   public class ApplicationDbContext : DbContext
  {
      protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
