@@ -12,7 +12,7 @@
     }
 ```
 
-### 2- طريقة باستخدام FluenApi:-
+### 2- by FluenApi:-  
 
 ```csharp
   protected override void OnModelCreating(ModelBuilder modelBuilder)
