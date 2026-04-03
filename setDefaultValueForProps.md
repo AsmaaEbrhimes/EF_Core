@@ -1,6 +1,6 @@
 # how to set default value for props? 
 
-### by Data Annotations:-
+### by FluenApi:-
 
 ```csharp
  public class Book
