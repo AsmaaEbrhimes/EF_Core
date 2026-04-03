@@ -2,8 +2,6 @@
 
 ### 1- لو محتاجه اضيف migration:-
 ```csharp
- * من قائمه NuGet Package Manager. اختار 
- * Package Manager Console. نكتب ال command 
  * add-migration InitialCreate
  ```
 
