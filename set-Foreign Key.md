@@ -7,7 +7,6 @@
  {
      public int Id { get; set; }
      public string person { get; set; }
-     [Required , MaxLength(1000)]
      public string Url { get; set; }
      public BlogImage BlogImage { get; set; }
  }
@@ -16,9 +15,7 @@
  public class BlogImage
  {
      public int Id { get; set; }
-     [Required, MaxLength(1000)]
      public string imge { get; set; }
-     [Required , MaxLength(250)]
      public string Caption { get; set; }
      public int ForeignKeyBlog { get; set; }
      [ForeignKey("ForeignKeyBlog")]   // data Annotaions    
