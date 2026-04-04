@@ -33,4 +33,3 @@ modelBuilder.Entity<Citizen>()          // 1. يا مواطن
     .WithOne(p => p.Citizen)            // 3. ويا باسوورد، إنت بتاع مواطن واحد
     .HasForeignKey<Passport>(p => p.CitizenId); //  4. والـ FK هيكون "جوه" شنطة الباسوورد or هيكون في ال child فيه حاجه لازم اربطها ب ال parent
 ```
-### * OneToOne * 
