@@ -1,4 +1,4 @@
-# *make  Composite Index ?
+# * make  Composite Index ?
 
 
 
