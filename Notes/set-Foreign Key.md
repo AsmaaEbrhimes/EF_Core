@@ -26,7 +26,6 @@
 
 
 ### by Data FluentApi:-
-
 ```csharp
 modelBuilder.Entity<Citizen>()          // 1. يا مواطن
     .HasOne(c => c.Passport)            // 2. إنت ليك باسوورد واحد
