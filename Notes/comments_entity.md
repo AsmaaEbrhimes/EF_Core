@@ -24,7 +24,7 @@ Update-Database -Migration 0
 Remove-Migration
 ```
 
-### 5- عندي مجموعة Migration وعاوزه أمسح Migration معينه من ال Database:-
+### 5- عندي مجموعة Migrations وعاوزه أمسح Migration معينه من ال Database:-
 ```csharp
 Update-Database 20260408182835_removecolumn
 ```
