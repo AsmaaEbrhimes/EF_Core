@@ -92,7 +92,7 @@
 }
 ```
 
-### 8- من خلال ال whera():-
+### 9- من خلال ال whera():-
 
 ```csharp
   static void Main(string[] args)
@@ -102,6 +102,151 @@
      foreach (var item in stock)
      {
      Console.WriteLine(stock == null?"NoDataInTabels":$"This The Id {item.Id} : {item.Name}");
+     }
+ }
+```
+
+### 10- من خلال ال Any():-
+
+```csharp
+   internal class Program
+ {
+     static void Main(string[] args)
+     {
+         var _context = new ApplicationDbContext();
+         var stock = _context.Stocks.Any();  // في حاله لو فيه data هيرجع true والعكس لو مش موجود data هيرجع false
+         Console.WriteLine(stock);
+     }
+ }
+```
+
+### \*ملحوظة هامة:-
+
+#### Any :- ممكن اننا نضفلها criteria وممكن نسبها كما في المثال.
+
+### 11- من خلال ال All():-
+
+```csharp
+  var _context = new ApplicationDbContext();
+ var stock = _context.Stocks.All(item => item.Id>0);
+ Console.WriteLine(stock);
+```
+
+### \*ملحوظة هامة:-
+
+#### // .All() تعيد true فقط إذا كانت جميع العناصر تحقق الشرط، وإذا خالف عنصر واحد الشرط تعيد false
+
+### 12- من خلال ال Append():-
+
+```csharp
+ static void Main(string[] args)
+ {
+     var _context = new ApplicationDbContext();
+     var stock = _context.Stocks.Where(item => item.Id > 500).ToList().Prepend(new Stock { Id =1001 , Name ="testAsmaa"}); //  arrayهنا بيضيف العنصر نهايه ال
+     foreach (var item in stock)
+     {
+         Console.WriteLine(item.Name);
+     }
+ }
+```
+
+### 13- من خلال ال Prepend():-
+
+```csharp
+    static void Main(string[] args)
+    {
+        var _context = new ApplicationDbContext();
+        var stock = _context.Stocks.Where(item => item.Id > 500).ToList().Prepend(new Stock { Id =1001 , Name ="testAsmaa"}); //  arrayهنا بيضيف العنصر أول ال
+        foreach (var item in stock)
+        {
+            Console.WriteLine(item.Name);
+        }
+    }
+```
+
+### 14- من خلال Mix():-
+
+```csharp
+    static void Main(string[] args)
+    {
+         var _context = new ApplicationDbContext();
+          var stock = _context.Stocks.Max(item => item.Id);  // اكبر قيمه
+          Console.WriteLine(stock);
+    }
+```
+
+### 15- من خلال Mix():-
+
+```csharp
+    static void Main(string[] args)
+    {
+          var _context = new ApplicationDbContext();
+          var stock = _context.Stocks.Min(item => item.Id);  // أقل قيمه
+          Console.WriteLine(stock);
+    }
+```
+
+### 16- من خلال OrderBy():-
+
+```csharp
+     static void Main(string[] args)
+ {
+     var _context = new ApplicationDbContext();
+     var stock = _context.Stocks.OrderBy(item => item.Id).ToList(); ;
+     foreach (var item in stock)
+     {
+     Console.WriteLine(item.Id);
+     }
+ }
+```
+
+### 17- من خلال Select():-
+
+```csharp
+      static void Main(string[] args)
+   {
+       var _context = new ApplicationDbContext();
+       var stock = _context.Stocks.Select(item => new {item.Id , item .Name}).ToList();
+       foreach (var item in stock)
+       {
+       Console.WriteLine($"{item.Id} => {item.Name}");// استخدام Select بيعمل حاجة بنسميها Projection، وده فعلاً بيحسن الـ Performance لأنك مش بتسحب كل الداتا (زي الصور أو النصوص الطويلة) من قاعدة البيانات، أنت بتطلب بس اللي محتاجه.
+       }
+   }
+```
+
+### 18- من خلال Distinct():-
+
+```csharp
+     static void Main(string[] args)
+ {
+     var _context = new ApplicationDbContext();
+     var stock = _context.Stocks.Select(item => new {item.Industry}).Distinct().ToList();
+     foreach (var item in stock)
+     {
+         Console.WriteLine(item.Industry); //Distinct:- هي فايدتها اني برجع ال value اللي مش متكررة مثلا لو عندي tabel وفيه ارقام متكرره وانا عاوزه بس ال uinq
+     }
+ }
+```
+
+### 19- من خلال Take() , Skip():-
+
+```csharp
+  internal class Program
+ {
+     static void Main(string[] args)
+     {
+         var _context = new ApplicationDbContext();
+         var stock = GetDataByPagnation(2, 10);
+         foreach (var item in stock)
+         {
+             Console.WriteLine(item.Id);
+         }
+     }
+
+     public static List<Stock> GetDataByPagnation(int currentPage , int pageSize)
+     {
+         var _context = new ApplicationDbContext();
+         return _context.Stocks.Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();   // Skip:- اول عشره , Take:- هياخد اللي بعد العشره
      }
 
  }
