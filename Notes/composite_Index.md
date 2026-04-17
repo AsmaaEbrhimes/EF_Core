@@ -1,7 +1,5 @@
 # * make  Composite Index ?
 
-
-
 #### by Data Annotations:-
 ```csharp
  [Index (nameof(Url) , nameof(Posts))]
