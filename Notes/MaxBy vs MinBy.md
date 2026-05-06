@@ -20,7 +20,7 @@ var topStudent = students.MaxBy(s => s.Grade);
 
 // أصغر طالب (أحدث تاريخ ميلاد) في كلمة واحدة
 var youngest = students.MaxBy(s => s.BirthDate);
-
+ؤ
 // النتيجة:
 Console.WriteLine(topStudent.FullName); // طبع اسم الطالب فوراً
 ```
