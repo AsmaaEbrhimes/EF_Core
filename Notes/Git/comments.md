@@ -17,3 +17,20 @@ git checkout main
 ```csharp
 git merge dev
 ```
+
+
+
+
+
+
+
+
+#### عاوزه اسحب من ال main الي branch اخر زي ال dev مثلا :-
+```csharp
+git checkout main
+```
+
+
+```csharp
+git pull origin main
+```
