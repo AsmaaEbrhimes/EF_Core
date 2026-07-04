@@ -31,6 +31,8 @@ Remove-Migration
 Update-Database 20260408182835_removecolumn
 ```
 
+
+
 ### 6- عاوزه بناءا علي ال connection بتاع database موجوده أجيب الجداول اللي موجوده فيها وأحطها عندي في الكود:-
 
 ```csharp
@@ -78,3 +80,13 @@ Install-Package Microsoft.EntityFrameworkCore.Tools
 ```csharp
 Install-Package Microsoft.EntityFrameworkCore.Design
 ```
+
+
+### 12- طيب انا عاوزه أضيف مكتبه ال jwt:-
+
+```csharp
+Microsoft.AspNetCore.Authentication.JwtBearer
+```
+
+
+
